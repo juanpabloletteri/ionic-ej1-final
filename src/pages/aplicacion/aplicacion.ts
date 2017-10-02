@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
@@ -28,7 +28,7 @@ export class AplicacionPage {
   creditos: FirebaseListObservable<any>;
   cargas: FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner, db: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner, db: AngularFireDatabase, public alertCtrl: AlertController) {
 
     this.usuario = this.navParams.get('usuario');
 
@@ -66,16 +66,50 @@ export class AplicacionPage {
 
       var creditoAgregado: number;
       switch (num) {
-        case '2786f4877b9091dcad7f35751bfcf5d5ea712b2f':
+        case '2786f4877b9091dcad7f35751bfcf5d5ea712b2f': {
           creditoAgregado = 100;
+          let alert = this.alertCtrl.create({
+            title: 'Resultado!',
+            subTitle: 'Gestion de carga exitosa, se agregaran ' + creditoAgregado + ' a su cuenta',
+            buttons: ['OK']
+          });
+          alert.present();
+        }
           break;
 
-        case '8c95def646b6127282ed50454b73240300dccabc':
+        case 'ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172': {
           creditoAgregado = 50;
+          let alert = this.alertCtrl.create({
+            title: 'Resultado!',
+            subTitle: 'Gestion de carga exitosa, se agregaran ' + creditoAgregado + ' a su cuenta',
+            buttons: ['OK']
+          });
+          alert.present();
+        }
+
           break;
 
-        case 'ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172':
+        case '8c95def646b6127282ed50454b73240300dccabc': {
           creditoAgregado = 10;
+          let alert = this.alertCtrl.create({
+            title: 'Resultado!',
+            subTitle: 'Gestion de carga exitosa, se agregaran ' + creditoAgregado + ' a su cuenta',
+            buttons: ['OK']
+          });
+          alert.present();
+        }
+
+          break;
+        default: {
+          let alert = this.alertCtrl.create({
+            title: 'SEGUI PARTICIPANDO!',
+            subTitle: 'No se reconoce el codigo escaneado',
+            buttons: ['OK']
+          });
+          alert.present();
+        }
+
+          break;
       }
 
       var nuevoCredito: number = this.credito + creditoAgregado;
