@@ -1,18 +1,49 @@
-<!--
-  Generated template for the AplicacionPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>aplicacion</ion-title>
+    <ion-title>
+      QR APP
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  credito de {{usuario}} : {{credito}}
+  <ion-item>
+    <ion-input type="text" placeholder="my qr data" [(ngModel)]="qrData">
+    </ion-input>
+  </ion-item>
+  <button ion-button full (click)="createCode()"><ion-icon name="barcode"></ion-icon>Create Code</button>
+  <button ion-button full (click)="scanCode()"><ion-icon name="qr-scanner"></ion-icon>Scan Code</button>
+
+  <ion-card *ngIf="createdCode">
+    <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+    <ion-card-content>
+      <p>Value: {{ createdCode }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="scannedCode">
+    <ion-card-content>
+      Result from Scan: {{scannedCode}}
+    </ion-card-content>
+  </ion-card>
+
+  <br><br>
+  <button ion-button full color="primary" (click)="cargarCredito('2786f4877b9091dcad7f35751bfcf5d5ea712b2f')">
+    carga 100
+  </button>
+
+  <button ion-button full color="primary" (click)="cargarCredito('8c95def646b6127282ed50454b73240300dccabc')">
+    carga 50
+  </button>
+
+  <button ion-button full color="primary" (click)="cargarCredito('ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172')">
+    carga 10
+  </button>
+
+  <br><br>
+    <button ion-button full color="secondary" (click)="verCredito('000000000000000000')">
+    ver credito
+  </button>
 
 </ion-content>

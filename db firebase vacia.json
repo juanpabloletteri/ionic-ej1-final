@@ -1,0 +1,66 @@
+{
+  "codigos" : {
+    "2786f4877b9091dcad7f35751bfcf5d5ea712b2f" : 100,
+    "8c95def646b6127282ed50454b73240300dccabc" : 10,
+    "ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172" : 50
+  },
+  "creditos" : {
+    "admin" : {
+      "credito" : 0
+    },
+    "invitado" : {
+      "credito" : 0
+    },
+    "j1" : {
+      "credito" : 0
+    },
+    "j2" : {
+      "credito" : 0
+    },
+    "user" : {
+      "credito" : 0
+    }
+  },
+  "usuarios" : {
+    "admin" : {
+      "clave" : 11,
+      "credito" : 150,
+      "id" : 1,
+      "nombre" : "admin",
+      "perfil" : "admin",
+      "sexo" : "female"
+    },
+    "invitado" : {
+      "clave" : 22,
+      "credito" : 0,
+      "id" : 2,
+      "nombre" : "invitado",
+      "perfil" : "invitado",
+      "sexo" : "female"
+    },
+    "j1" : {
+      "clave" : 44,
+      "credito" : 0,
+      "id" : 4,
+      "nombre" : "j1",
+      "perfil" : "jugador",
+      "sexo" : "male"
+    },
+    "j2" : {
+      "clave" : 55,
+      "credito" : 0,
+      "id" : 5,
+      "nombre" : "j2",
+      "perfil" : "jugador",
+      "sexo" : "female"
+    },
+    "usuario" : {
+      "clave" : 33,
+      "credito" : 0,
+      "id" : 3,
+      "nombre" : "usuario",
+      "perfil" : "usuario",
+      "sexo" : "male"
+    }
+  }
+}
