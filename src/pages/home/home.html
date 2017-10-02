@@ -1,14 +1,73 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Inicio</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding class="fondo">
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Es usuario?</ion-label>
+      <ion-toggle value="foo" checked="true" [(ngModel)]="esUsuario"></ion-toggle>
+    </ion-item>
+
+  </ion-list>
+
+  <div *ngIf="esUsuario">
+    <ion-item>
+      <ion-input type="text" placeholder="Usuario" [(ngModel)]="usuario"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="pass"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button color="primary" icon-end (click)="login()">
+            Ingresar
+            <ion-icon name='arrow-forward'></ion-icon>
+          </button>
+
+  </div>
+
+  <div *ngIf="!esUsuario">
+
+    <ion-item>
+      <ion-input type="text" placeholder="Usuario" [(ngModel)]="usuario"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="pass1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Confirme su Password" [(ngModel)]="pass2"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button color="secondary" icon-start>
+            <ion-icon name='people'></ion-icon>
+              Registrar
+          </button>
+
+  </div>
+
+  <ion-fab left bottom>
+    <button ion-fab color="secondary"><ion-icon name="arrow-dropright"></ion-icon></button>
+    <ion-fab-list side="right">
+      <button ion-fab (click)="asignarUsuario('admin')">AD</button>
+      <button ion-fab (click)="asignarUsuario('invitado')">IN</button>
+      <button ion-fab (click)="asignarUsuario('usuario')">US</button>
+      <button ion-fab (click)="asignarUsuario('j1')">J1</button>
+      <button ion-fab (click)="asignarUsuario('j2')">J2</button>
+    </ion-fab-list>
+  </ion-fab>
+
 </ion-content>
