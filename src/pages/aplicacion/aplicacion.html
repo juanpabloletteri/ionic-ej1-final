@@ -1,11 +1,20 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      QR APP
+      Carga de Credito
     </ion-title>
   </ion-navbar>
 </ion-header>
 
+<ion-content padding>
+  <button ion-button color="secondary" round icon-start (click)="scanCode()">
+      <ion-icon name='camera' ></ion-icon>
+      Capturar Codigo
+    </button><br>
+    Credito de {{usuario}}: {{credito}}
+</ion-content>
+
+<!--
 <ion-content padding>
   credito de {{usuario}} : {{credito}}
   <ion-item>
@@ -46,4 +55,4 @@
     ver credito
   </button>
 
-</ion-content>
+</ion-content> -->

@@ -54,7 +54,9 @@ export class AplicacionPage {
   scanCode() {
     this.barcodeScanner.scan().then(barcodeData => {
       this.scannedCode = barcodeData.text;
+      this.cargarCredito(barcodeData.text);
     })
+
   }
 
   ///////////////////

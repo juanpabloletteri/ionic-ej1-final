@@ -12,12 +12,12 @@
       "credito" : 0
     },
     "j1" : {
-      "credito" : 0
+      "credito" : 50
     },
     "j2" : {
       "credito" : 0
     },
-    "user" : {
+    "usuario" : {
       "credito" : 0
     }
   },
