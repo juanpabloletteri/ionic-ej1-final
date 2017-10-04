@@ -6,12 +6,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="fondo">
+  <ion-item class="credito">
+    <h2 class="texto">Credito de {{usuario}}: {{credito}}</h2>
+  </ion-item>
   <button ion-button color="secondary" round icon-start (click)="scanCode()">
       <ion-icon name='camera' ></ion-icon>
       Capturar Codigo
     </button><br>
-    Credito de {{usuario}}: {{credito}}
+
 </ion-content>
 
 <!--
