@@ -38,7 +38,7 @@ export class AplicacionPage {
 
     this.creditos.forEach(element => {
       for (let i in element) {
-        console.log(element[i]);
+        //console.log(element[i]);
         if (element[i].$key == this.usuario) {
           this.credito = element[i].credito;
 
@@ -70,7 +70,7 @@ export class AplicacionPage {
           creditoAgregado = 100;
           let alert = this.alertCtrl.create({
             title: 'Resultado!',
-            subTitle: 'Gestion de carga exitosa, se agregaran ' + creditoAgregado + ' a su cuenta',
+            subTitle: 'Gestion de carga exitosa, se agregaran ' + creditoAgregado + ' creditos a su cuenta',
             buttons: ['OK']
           });
           alert.present();
@@ -81,7 +81,7 @@ export class AplicacionPage {
           creditoAgregado = 50;
           let alert = this.alertCtrl.create({
             title: 'Resultado!',
-            subTitle: 'Gestion de carga exitosa, se agregaran ' + creditoAgregado + ' a su cuenta',
+            subTitle: 'Gestion de carga exitosa, se agregaran ' + creditoAgregado + ' creditos a su cuenta',
             buttons: ['OK']
           });
           alert.present();
@@ -93,7 +93,7 @@ export class AplicacionPage {
           creditoAgregado = 10;
           let alert = this.alertCtrl.create({
             title: 'Resultado!',
-            subTitle: 'Gestion de carga exitosa, se agregaran ' + creditoAgregado + ' a su cuenta',
+            subTitle: 'Gestion de carga exitosa, se agregaran ' + creditoAgregado + ' creditos a su cuenta',
             buttons: ['OK']
           });
           alert.present();
@@ -114,11 +114,17 @@ export class AplicacionPage {
 
       var nuevoCredito: number = this.credito + creditoAgregado;
       this.cargas.push(num);
-      console.log("credito cargado");
+      //console.log("credito cargado");
       this.creditos.update(this.usuario, { credito: nuevoCredito })
     }
     else {
-      console.log("ya se cargo");
+      let alert = this.alertCtrl.create({
+        title: 'SEGUI PARTICIPANDO!',
+        subTitle: 'Ya se ha cargado este codigo a su cuenta',
+        buttons: ['OK']
+      });
+      alert.present();
+      //console.log("ya se cargo");
     }
   }
 
@@ -126,7 +132,7 @@ export class AplicacionPage {
     var flag = 0;
     this.cargas.forEach(element => {
       for (let i in element) {
-        console.log("element i-" + i + ": " + element[i].$value);
+        //console.log("element i-" + i + ": " + element[i].$value);
         if (element[i].$value == num) {
           flag = 1;
           return flag;
@@ -141,9 +147,9 @@ export class AplicacionPage {
 
       for (let i in element) {
 
-        console.log(element[i].$value + "num: " + num);
+        //console.log(element[i].$value + "num: " + num);
         if (element[i].$value == num) {
-          console.log("oasdasdoaosd");
+          //console.log("oasdasdoaosd");
           return;
         }
       }

@@ -32,13 +32,29 @@ export class HomePage {
           //SE ENCONTRO USUARIO
           this.usuario = element[i].nombre;
 
-          let alert = this.alertCtrl.create({
-            title: 'Bienvenido: ' + this.usuario,
-            buttons: ['OK']
+          //mensaje de acepta condiciones
+          let confirm = this.alertCtrl.create({
+            title: 'Condiciones',
+            message: 'Al presionar siguiente acepta los terminos y condiciones de la aplicacion',
+            buttons: [
+              {
+                text: 'No Acepto',
+                handler: () => {
+                 // console.log('No Acepto');
+                }
+              },
+              {
+                text: 'Siguiente',
+                handler: () => {
+                  this.navCtrl.push(AplicacionPage, { "usuario": this.usuario });
+                  //console.log('Siguiente');
+                }
+              }
+            ]
           });
-          alert.present();
+          confirm.present();
           //Redirijo a la pagina correspondiente
-          this.navCtrl.push(AplicacionPage, { "usuario": this.usuario });
+
           return;
         }
       }
