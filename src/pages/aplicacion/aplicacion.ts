@@ -68,6 +68,7 @@ export class AplicacionPage {
       switch (num) {
         case '2786f4877b9091dcad7f35751bfcf5d5ea712b2f': {
           creditoAgregado = 100;
+          this.cargas.push(num);
           let alert = this.alertCtrl.create({
             title: 'Resultado!',
             subTitle: 'Gestion de carga exitosa, se agregaran ' + creditoAgregado + ' creditos a su cuenta',
@@ -77,8 +78,9 @@ export class AplicacionPage {
         }
           break;
 
-        case 'ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172': {
+        case 'ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172 ': {
           creditoAgregado = 50;
+          this.cargas.push(num);
           let alert = this.alertCtrl.create({
             title: 'Resultado!',
             subTitle: 'Gestion de carga exitosa, se agregaran ' + creditoAgregado + ' creditos a su cuenta',
@@ -91,6 +93,7 @@ export class AplicacionPage {
 
         case '8c95def646b6127282ed50454b73240300dccabc': {
           creditoAgregado = 10;
+          this.cargas.push(num);
           let alert = this.alertCtrl.create({
             title: 'Resultado!',
             subTitle: 'Gestion de carga exitosa, se agregaran ' + creditoAgregado + ' creditos a su cuenta',
@@ -108,13 +111,10 @@ export class AplicacionPage {
           });
           alert.present();
         }
-
           break;
       }
 
       var nuevoCredito: number = this.credito + creditoAgregado;
-      this.cargas.push(num);
-      //console.log("credito cargado");
       this.creditos.update(this.usuario, { credito: nuevoCredito })
     }
     else {
