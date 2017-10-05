@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
@@ -28,7 +28,14 @@ export class AplicacionPage {
   creditos: FirebaseListObservable<any>;
   cargas: FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner, db: AngularFireDatabase, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner,
+    db: AngularFireDatabase, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
+
+    let loader = this.loadingCtrl.create({
+      content: "Cargando...",
+      duration: 1500
+    });
+    loader.present();
 
     this.usuario = this.navParams.get('usuario');
 
